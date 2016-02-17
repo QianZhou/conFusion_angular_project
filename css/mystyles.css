@@ -37,7 +37,7 @@ body{
 .navbar-inverse {
      background: #303F9F;
 }
-.checkbox{
+#checkbox{
      color: #fff;
 }
 .navbar-inverse .navbar-nav > .active > a,

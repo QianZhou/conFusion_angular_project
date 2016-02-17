@@ -74,8 +74,31 @@
                            
                             <li><a href="contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                        </ul>
-                     
-                      <form class="navbar-form navbar-right">
+                   
+                     <ul class="nav navbar-nav navbar-right">
+                    <li><a data-toggle="modal" data-target="#loginModal">
+                    <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+
+                    
+                </div>
+               
+               
+            </div>
+    </nav>   
+    
+        <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login </h4>
+            </div>
+            <div class="modal-body">
+
+              <form class="form-inline">
                         <div class="form-group">
                             <label class="sr-only" for="email">Email address</label>
                             <input type="email" class="form-control" id="email" placeholder="Email"> 
@@ -87,16 +110,17 @@
                         <div class="checkbox">
                         <label> <input type="checkbox"> Remember Me</label>
                         </div>
-                        <buRon type="submit" class="btn btn-info">Sign in</buRon> 
+                        <button type="submit" class="btn btn-info">Sign in</button> 
+                        <button type="button" class="btn btn-default btn-sm"
+                       data-dismiss="modal">Cancel</button>
                     </form>
-                </div>
-               
-               
+
             </div>
-    </nav>   
+        </div>
+        </div>
+    </div>
     
-    
-    
+     
     <header class="jumbotron">
 
         <!-- Main component for a primary marketing message or call to action -->
@@ -116,10 +140,8 @@
                 
                 <div class="col-xs-6 col-sm-2">
                     <p style="padding:45px;"></p>
-                    <a type="button" class="btn btn-warning btn-block" href="#reservation">Reserve Table</a>
+                    <a type="button" class="btn btn-warning btn-block" data-toggle="tooltip" title="Or Call us at +852 12345678" data-placement="bottom" href="#reserveform"> Reserve Table</a>
                 </div>
-                
-                
             </div>
         </div>
     </header>
@@ -150,7 +172,7 @@
             </div>
         </div>
 
-         <div  class="row row-content">
+        <div  class="row row-content">
             <div class="col-xs-12 col-sm-3">
                 <p style="padding:20px;"></p>
                 <h3 align=center>This Month's Promotions</h3>
@@ -171,8 +193,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3">
@@ -201,14 +221,13 @@
             </div>
         </div>
         
-          <div class="row row-content">
-            
+        <div class="row row-content">
                <div class="col-xs-12 col-sm-3">
                 <p style="padding:20px;"></p>
                 <h3 align=center>Reserve a Table</h3>
             </div>
             <div class="col-xs-12 col-sm-9">
-               <form id="reservation" class="form-horizontal" role="form">
+               <form id="reserveform" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label for="numberOfGuests" class="col-sm-2 control-label">Number of Guests</label>  
                         <div class="col-sm-10">
@@ -270,8 +289,7 @@
                 </form>
             </div>
     </div>
-
-    
+    </div>
     
     
     <footer class="row-footer">
@@ -323,7 +341,14 @@
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+         });
+    </script>
 
 </body>
 
