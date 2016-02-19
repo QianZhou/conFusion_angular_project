@@ -80,7 +80,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a data-toggle="modal" data-target="#loginModal">
+                        <a id="login">
                             <span class="glyphicon glyphicon-log-in"></span> Login</a>
                     </li>
                 </ul>
@@ -148,22 +148,22 @@
                     <p style="padding:45px;"></p>
 
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal">
+                    <button id="reserveBtn" type="button" class="btn btn-warning btn-block">
                         Reserve Table
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal fade" id="reserveModal" tabindex="-1" role="dialog" aria-labelledby="reserveModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Reserve Table</h4>
+                                    <h4 class="modal-title" id="reserveModalLabel">Reserve Table</h4>
                                 </div>
                                 <div class="modal-body">
 
 
-                                    <form id="reserveform" class="form-horizontal" role="form">
+                                    <form id="reserveForm" class="form-horizontal" role="form">
                                         <div class="form-group">
                                             <label for="numberOfGuests" class="col-sm-2 control-label">Number of Guests</label>
                                             <div class="col-sm-10">
@@ -382,7 +382,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -448,6 +447,13 @@
             });
             $("#carousel-play").click(function () {
                 $("#mycarousel").carousel('cycle');
+            });
+
+            $("#login").click(function () {
+                $('#loginModal').modal('show');
+            });
+            $("#reserveBtn").click(function () {
+                $('#reserveModal').modal('show');
             });
         });
     </script>
